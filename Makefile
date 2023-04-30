@@ -53,8 +53,8 @@ build:
 # generate
 generate:
 	go mod tidy
-	go install github.com/google/wire/cmd/wire@latest
-	go generate ./...
+#	go install github.com/google/wire/cmd/wire@v0.5.0
+#	go generate ./...
 
 .PHONY: all
 # generate all
