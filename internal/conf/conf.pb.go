@@ -27,7 +27,7 @@ type Bootstrap struct {
 	unknownFields protoimpl.UnknownFields
 
 	Server *Server `protobuf:"bytes,1,opt,name=server,proto3" json:"server,omitempty"`
-	Data   *Data   `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+	Data   *Data   `protobuf:"bytes,2,opt,name=dao,proto3" json:"dao,omitempty"`
 }
 
 func (x *Bootstrap) Reset() {
@@ -524,7 +524,7 @@ var file_conf_conf_proto_goTypes = []interface{}{
 }
 var file_conf_conf_proto_depIdxs = []int32{
 	1,  // 0: kratos.api.Bootstrap.server:type_name -> kratos.api.Server
-	2,  // 1: kratos.api.Bootstrap.data:type_name -> kratos.api.Data
+	2,  // 1: kratos.api.Bootstrap.dao:type_name -> kratos.api.Data
 	3,  // 2: kratos.api.Server.http:type_name -> kratos.api.Server.HTTP
 	4,  // 3: kratos.api.Server.grpc:type_name -> kratos.api.Server.GRPC
 	5,  // 4: kratos.api.Data.database:type_name -> kratos.api.Data.Database
