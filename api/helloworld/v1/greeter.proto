@@ -3,19 +3,23 @@ syntax = "proto3";
 package helloworld.v1;
 
 import "google/api/annotations.proto";
-
-option go_package = "github.com/go-kratos/kratos-layout/api/helloworld/v1;v1";
-option java_multiple_files = true;
-option java_package = "dev.kratos.api.helloworld.v1";
-option java_outer_classname = "HelloworldProtoV1";
+import "google/api/client.proto";
 
 // The greeting service definition.
-service Greeter {
+service GreeterService {
+  option (google.api.default_host) = "library-example.googleapis.com";
   // Sends a greeting
+  // `other_shelf_name` to shelf `name`, and deletes
+  // `other_shelf_name`. Returns the updated shelf.
+  // The book ids of the moved books may not be the same as the original books.
+  //
+  // Returns NOT_FOUND if either shelf does not exist.
+  // This call is a no-op if the specified shelves are the same.
   rpc SayHello (SayHelloReq) returns (SayHelloResp) {
     option (google.api.http) = {
       get: "/helloworld/{name}"
     };
+    option (google.api.method_signature) = "name";
   }
 }
 
