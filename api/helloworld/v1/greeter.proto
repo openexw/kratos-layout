@@ -4,6 +4,8 @@ package helloworld.v1;
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/descriptor.proto";
 
 // The greeting service definition.
 service GreeterService {
@@ -17,7 +19,7 @@ service GreeterService {
   // This call is a no-op if the specified shelves are the same.
   rpc SayHello (SayHelloReq) returns (SayHelloResp) {
     option (google.api.http) = {
-      get: "/helloworld/{name}"
+      get: "/helloworld/{name}",
     };
     option (google.api.method_signature) = "name";
   }
@@ -25,10 +27,13 @@ service GreeterService {
 
 // The request message containing the user's name.
 message SayHelloReq {
+  // 姓名
   string name = 1;
 }
 
 // The response message containing the greetings
 message SayHelloResp {
   string message = 1;
+  // 用户
+  google.protobuf.Struct user = 2;
 }
